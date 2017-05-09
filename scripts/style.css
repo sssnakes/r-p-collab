@@ -1,0 +1,149 @@
+*, body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 26px;
+  font-family: 'Helv', sans-serif;
+  /*cursor: none;*/
+}
+
+@font-face {
+    font-family: 'Helv';
+    src: url('../fonts/helvetica-light.otf');
+    font-weight: lighter;
+    font-style: lighter;
+}
+
+#besideMouse{
+  font-size: 6vw;
+  z-index: 1000;
+  position: fixed;
+  text-align: center;
+  /*transform: translateX(-50%);*/
+}
+
+.mouse-box{
+  height: 100vh;
+  width: 50vw;
+  position: fixed;
+  /*pointer-events: none;*/
+}
+
+/*FACE CONTAINER ELEMENTS ----------------------------------------------------*/
+
+
+.face-container{
+  position: fixed;
+  height: 100vh;
+  width: 100vh;
+  max-width: 100vw;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
+.collage{
+  position: absolute;
+  transform: translateX(-50%);
+  /*display: none;*/
+}
+
+.collage-a, .collage-b{
+  display: none;
+}
+
+.collage:hover{
+  /*opacity: 0.5;*/
+}
+
+.collage1{
+  bottom: 28vh;
+  left: 35%;
+  z-index: 100;
+  width: 35vh;
+  mix-blend-mode: multiply;
+}
+
+.collage2{
+  bottom: 70vh;
+  left: 50%;
+  z-index: 35;
+  width: 56vh;
+}
+
+.collage3{
+  bottom: 16vh;
+  left: 51%;
+  z-index: 30;
+  width: 47vh;
+}
+
+.collage4{
+  bottom: 13vh;
+  left: 43%;
+  z-index: 40;
+  width: 26vh;
+}
+
+.collage5{
+  bottom: 42vh;
+  left: 46%;
+  z-index: 10;
+  width: 103vh;
+}
+
+.collage6{
+  bottom: 0;
+  left: 50%;
+  z-index: 10;
+  width: 72vh;
+}
+
+.collage7{
+  bottom: 22vh;
+  left: 40%;
+  z-index: 40;
+  width: 60vh;
+}
+
+.collage8{
+  bottom: 24vh;
+  left: 41%;
+  z-index: 50;
+  width: 34vh;
+}
+
+.collage9{
+  bottom: 37vh;
+  left: 58%;
+  z-index: 30;
+  width: 21vh;
+}
+
+.collage10{
+  bottom: 44vh;
+  left: 46%;
+  z-index: 10;
+  width: 120vh;
+}
+
+.collage11{
+  bottom: 0;
+  left: 46%;
+  z-index: 10;
+  width: 84vh;
+}
+
+/* TEXT CONTAINER DIV  -------------------------------------------------------*/
+
+
+.intro-container{
+  position: absolute;
+  padding: 60px;
+  pointer-events: none;
+}
+.intro-text{
+  font-family: 'Helv', sans-serif;
+  font-weight: lighter;
+  font-size: 6vw;
+}

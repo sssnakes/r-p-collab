@@ -4,7 +4,7 @@
   box-sizing: border-box;
   font-size: 26px;
   font-family: 'Helv', sans-serif;
-  /*cursor: none;*/
+  cursor: crosshair;
 }
 
 @font-face {
@@ -27,6 +27,43 @@
   width: 50vw;
   position: fixed;
   /*pointer-events: none;*/
+}
+
+/*SIDE BARS ------------------------------------------------------------------*/
+
+.sidebar{
+  width: 50vw;
+  height: 100vh;
+  z-index: 1000;
+  position: absolute;
+  display: inline-block;
+  box-shadow: 0px 0px 20px 0px #757575;
+  padding: 20px;
+}
+.sidebar p{
+  font-size: 50px;
+}
+.sb-rachel{
+  background: #E0D9D6;
+  right: -60vw;
+}
+.st-rachel{
+  height: 100vh;
+  width: 20vw;
+  max-width: 200px;
+  position: absolute;
+  right: 0;
+}
+.sb-pierre{
+  background: #E0D9D6;
+  left: -60vw;
+}
+.st-pierre{
+  height: 100vh;
+  width: 20vw;
+  max-width: 200px;
+  position: absolute;
+  left: 0;
 }
 
 /*FACE CONTAINER ELEMENTS ----------------------------------------------------*/
@@ -132,6 +169,55 @@
   left: 46%;
   z-index: 10;
   width: 84vh;
+}
+
+/* MENU POINTERS  -------------------------------------------------------*/
+
+.menu-pointer, .menu-pointer p{
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: normal;
+  font-family: Arial, sans-serif;
+  width: 100px;
+}
+
+.menu-tl{
+  top: 20px;
+  left: 20px;
+}
+
+.menu-tr{
+  top: 20px;
+  right: 20px;
+  text-align: right;
+}
+
+.arrow{
+  height: 18px;
+  width: 18px;
+}
+
+.arrow-l{
+  background: url(../assets/svg/arrow-left.svg);
+  top: 90px;
+}
+
+.arrow-r{
+  background: url(../assets/svg/arrow-right.svg);
+  top: 25px;
+  right: 0;
+  position: absolute;
+}
+.menu-bot{
+  left: 75vw;
+  bottom: 25px;
+  position: absolute;
+}
+.arrow-d{
+  background: url(../assets/svg/arrow-down.svg);
+  display: inline-block;
+  float: right;
 }
 
 /* TEXT CONTAINER DIV  -------------------------------------------------------*/

@@ -51,7 +51,7 @@ $(document).ready(function(){
   $('.intro-container').css('top', contH);
   $('.intro-container').animate({
     top: travel
-  }, 20000);
+  }, 40000);
 
   $('.intro-text').click(function(){
     $('.intro-text').fadeOut;

@@ -35,16 +35,17 @@
   width: 50vw;
   height: 100vh;
   z-index: 1000;
-  position: absolute;
+  position: fixed;
   display: inline-block;
-  box-shadow: 0px 0px 20px 0px #757575;
   padding: 20px;
+  color: #fff;
+  overflow: scroll;
 }
 .sidebar p{
   font-size: 50px;
 }
 .sb-rachel{
-  background: #E0D9D6;
+  background: #000;
   right: -60vw;
 }
 .st-rachel{
@@ -55,7 +56,7 @@
   right: 0;
 }
 .sb-pierre{
-  background: #E0D9D6;
+  background: #000;
   left: -60vw;
 }
 .st-pierre{
@@ -82,94 +83,256 @@
 .collage{
   position: absolute;
   transform: translateX(-50%);
-  /*display: none;*/
 }
 
-.collage-a, .collage-b{
+.collage-a, .collage-b, .collage-c, .collage-d, .collage-e, .collage-f{
   display: none;
 }
 
-.collage:hover{
-  /*opacity: 0.5;*/
+/* Collage 1 ----------------*/
+.collage-a-1{
+  bottom: 68vh;
+  left: 46%;
+  width: 59vh;
+  z-index: 90;
 }
-
-.collage1{
-  bottom: 28vh;
-  left: 35%;
-  z-index: 100;
+.collage-a-2{
+  bottom: 32vh;
+  left: 32%;
   width: 35vh;
+  z-index: 80;
   mix-blend-mode: multiply;
 }
-
-.collage2{
-  bottom: 70vh;
-  left: 50%;
-  z-index: 35;
-  width: 56vh;
-}
-
-.collage3{
-  bottom: 16vh;
-  left: 51%;
-  z-index: 30;
-  width: 47vh;
-}
-
-.collage4{
-  bottom: 13vh;
-  left: 43%;
+.collage-a-3{
+  bottom: 19vh;
+  left: 49%;
+  width: 48vh;
   z-index: 40;
-  width: 26vh;
 }
-
-.collage5{
-  bottom: 42vh;
-  left: 46%;
-  z-index: 10;
-  width: 103vh;
-}
-
-.collage6{
-  bottom: 0;
-  left: 50%;
-  z-index: 10;
-  width: 72vh;
-}
-
-.collage7{
-  bottom: 22vh;
-  left: 40%;
-  z-index: 40;
-  width: 60vh;
-}
-
-.collage8{
-  bottom: 24vh;
+.collage-a-4{
+  bottom: 17vh;
   left: 41%;
-  z-index: 50;
-  width: 34vh;
+  width: 26vh;
+  z-index: 60;
 }
-
-.collage9{
-  bottom: 37vh;
-  left: 58%;
-  z-index: 30;
-  width: 21vh;
-}
-
-.collage10{
+.collage-a-5{
   bottom: 44vh;
-  left: 46%;
+  left: 41%;
+  width: 109vh;
+  z-index: 20;
+}
+.collage-a-6{
+  bottom: 0;
+  left: 50%;
+  width: 84vh;
   z-index: 10;
-  width: 120vh;
 }
 
-.collage11{
+/* Collage 2 ----------------*/
+.collage-b-1{
+  bottom: 38vh;
+  left: 24%;
+  width: 23vh;
+  z-index: 90;
+  mix-blend-mode: multiply;
+}
+.collage-b-2{
+  bottom: 27vh;
+  left: 38%;
+  width: 19vh;
+  z-index: 80;
+}
+.collage-b-3{
+  bottom: 25vh;
+  left: 53%;
+  width: 49vh;
+  z-index: 40;
+}
+.collage-b-4{
+  bottom: 50vh;
+  left: 57%;
+  width: 102vh;
+  z-index: 20;
+}
+.collage-b-5{
+  bottom: 4vh;
+  left: 53%;
+  width: 27vh;
+  z-index: 20;
+}
+.collage-b-6{
+  bottom: 0;
+  left: 50%;
+  width: 84vh;
+  z-index: 10;
+}
+
+/* Collage 3 ----------------*/
+.collage-c-1{
+  bottom: 41vh;
+  left: 63%;
+  width: 24vh;
+  z-index: 90;
+}
+.collage-c-2{
+  bottom: 54vh;
+  left: 25%;
+  width: 19vh;
+  z-index: 80;
+}
+.collage-c-3{
+  bottom: 79vh;
+  left: 60%;
+  width: 56vh;
+  z-index: 100;
+  mix-blend-mode: multiply;
+}
+.collage-c-4{
+  bottom: 32vh;
+  left: 57%;
+  width: 45vh;
+  z-index: 60;
+}
+.collage-c-5{
+  bottom: 29vh;
+  left: 48%;
+  width: 46vh;
+  z-index: 20;
+}
+.collage-c-6{
+  bottom: 12vh;
+  left: 50%;
+  width: 27vh;
+  z-index: 30;
+}
+.collage-c-7{
+  bottom: 0;
+  left: 50%;
+  width: 92vh;
+  z-index: 10;
+}
+
+/* Collage 4 ----------------*/
+.collage-d-1{
+  bottom: 52vh;
+  left: 51%;
+  width: 22vh;
+  z-index: 90;
+}
+.collage-d-2{
+  bottom: 51vh;
+  left: 74%;
+  width: 13vh;
+  z-index: 80;
+}
+.collage-d-3{
+  bottom: 27vh;
+  left: 61%;
+  width: 26vh;
+  z-index: 70;
+}
+.collage-d-4{
+  bottom: 19vh;
+  left: 50%;
+  width: 49vh;
+  z-index: 60;
+}
+.collage-d-5{
+  bottom: 38vh;
+  left: 39%;
+  width: 70vh;
+  z-index: 40;
+}
+.collage-d-6{
+  bottom: 23vh;
+  left: 36%;
+  width: 23vh;
+  z-index: 30;
+}
+.collage-d-7{
   bottom: 0;
   left: 46%;
+  width: 98vh;
   z-index: 10;
-  width: 84vh;
 }
+
+/* Collage 5 ----------------*/
+.collage-e-1{
+  bottom: 0;
+  left: 51%;
+  width: 104vh;
+  z-index: 90;
+}
+.collage-e-2{
+  bottom: 30vh;
+  left: 59%;
+  width: 32vh;
+  z-index: 80;
+}
+.collage-e-3{
+  bottom: 61vh;
+  left: 49%;
+  width: 54vh;
+  z-index: 70;
+  mix-blend-mode: multiply;
+}
+.collage-e-4{
+  bottom: 45vh;
+  left: 33%;
+  width: 28vh;
+  z-index: 40;
+}
+.collage-e-5{
+  bottom: 67vh;
+  left: 36%;
+  width: 18vh;
+  z-index: 40;
+}
+.collage-e-6{
+  bottom: 2vh;
+  left: 53%;
+  width: 25vh;
+  z-index: 40;
+}
+.collage-e-7{
+  bottom: 43vh;
+  left: 69%;
+  width: 25vh;
+  z-index: 30;
+}
+
+/* Collage 6 ----------------*/
+.collage-f-1{
+  bottom: 25vh;
+  left: 41%;
+  width: 33vh;
+  z-index: 90;
+}
+.collage-f-2{
+  bottom: 22vh;
+  left: 41%;
+  width: 55vh;
+  z-index: 80;
+}
+.collage-f-3{
+  bottom: 0;
+  left: 45%;
+  width: 81vh;
+  z-index: 70;
+}
+.collage-f-4{
+  bottom: 40vh;
+  left: 48%;
+  width: 123vh;
+  z-index: 40;
+}
+.collage-f-5{
+  bottom: 32vh;
+  left: 61%;
+  width: 19vh;
+  z-index: 40;
+}
+
 
 /* MENU POINTERS  -------------------------------------------------------*/
 
@@ -185,12 +348,14 @@
 .menu-tl{
   top: 20px;
   left: 20px;
+  position: fixed;
 }
 
 .menu-tr{
   top: 20px;
   right: 20px;
   text-align: right;
+  position: fixed;
 }
 
 .arrow{
@@ -210,26 +375,42 @@
   position: absolute;
 }
 .menu-bot{
-  left: 75vw;
+  left: 82vw;
   bottom: 25px;
   position: absolute;
+  width: 75px;
 }
 .arrow-d{
   background: url(../assets/svg/arrow-down.svg);
   display: inline-block;
   float: right;
+  position: relative;
+  top: 7px;
 }
 
-/* TEXT CONTAINER DIV  -------------------------------------------------------*/
+/* INTRO CONTAINER DIV  ------------------------------------------------------*/
 
 
 .intro-container{
   position: absolute;
-  padding: 60px;
   pointer-events: none;
+}
+.intro-top{
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+}
+.intro-bottom{
+  position: absolute;
+  width: 100vw;
+  top: 100vh;
 }
 .intro-text{
   font-family: 'Helv', sans-serif;
   font-weight: lighter;
   font-size: 6vw;
+  padding: 40px;
+}
+.intro-footer{
+  height: 100vh;
 }

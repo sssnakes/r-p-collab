@@ -1,40 +1,53 @@
 function loadingBM(){
-  setTimeout('$("#besideMouse").html("Rachel")' , 0);
-  setTimeout('$("#besideMouse").html("&amp;")'  , 500);
-  setTimeout('$("#besideMouse").html("Pierre")' , 1000);
-  setTimeout('$("#besideMouse").html("and")'    , 1500);
-  setTimeout('$("#besideMouse").html("Rachel")' , 2000);
-  setTimeout('$("#besideMouse").html("et")'     , 2500);
-  setTimeout('$("#besideMouse").html("Pierre")' , 3000);
-  setTimeout('$("#besideMouse").html("en")'     , 3500);
+  setTimeout('$("#besideMouse").html("Rachel")'  , 0);
+  setTimeout('$("#besideMouse").html("&amp;")'   , 500);
+  setTimeout('$("#besideMouse").html("Pierre")'  , 1000);
+  setTimeout('$("#besideMouse").html("and")'     , 1500);
+  setTimeout('$("#besideMouse").html("Rachel")'  , 2000);
+  setTimeout('$("#besideMouse").html("&#12425;")', 2500);
+  setTimeout('$("#besideMouse").html("Pierre")'  , 3000);
+  setTimeout('$("#besideMouse").html("et")'      , 3500);
 }
 
 $(document).ready(function(){
 
-  // COLLAGE FADE
-  // $('.collage').css('opacity', '0');
+  // COLLAGE --------------------------------------------------------------------
 
-  $('.collage-a:lt(6)').each(function(i){
-    $(this).delay(1000 * i).fadeIn(1000);
-  });
 
-  $('.collage-a').click(function(){
-    $('.collage-a:lt(6)').each(function(i){
-      $(this).delay(500 * i).fadeOut(500);
-    });
-    $('.collage-b:lt(6)').each(function(i){
-      $(this).delay(500 * i).fadeIn(500);
-    });
-  });
+  // $('.collage-a').each(function(i){
+  //   $(this).delay(500 * i).fadeIn(500);
+  // });
 
-  $('.collage-b').click(function(){
-    $('.collage-b:lt(6)').each(function(i){
-      $(this).delay(500 * i).fadeOut(500);
-    });
-    $('.collage-a:lt(6)').each(function(i){
-      $(this).delay(500 * i).fadeIn(500);
-    });
-  });
+  var arr = ['a' , 'b' , 'c', 'd', 'e', 'f'];
+
+  (function recurse(counter) {
+
+      var a = arr[counter];
+      var b = arr[counter + 1];
+
+      console.log(a);
+      console.log(b);
+
+      $('.collage-' + a).each(function(i){
+        $(this).delay(500 * i).fadeOut(500);
+      });
+
+      $('.collage-' + b).each(function(i){
+        $(this).delay(500 * i).fadeIn(500);
+      });
+
+      delete arr[counter];
+      arr.push(a);
+
+      setTimeout(function() {
+          recurse(counter + 1);
+      }, 6000);
+
+  })(0);
+
+
+
+  // MOUSE ----------------------------------------------------------------------
 
   $(document).mousemove(function(e){
     var cpos = { top: e.pageY + 10, left: e.pageX + 10 };
@@ -53,10 +66,6 @@ $(document).ready(function(){
     $('.sb-rachel').animate({ right: win }, 300);
   });
 
-  // $('.st-rachel').mouseleave(function(){
-  //   var win = ($(window).width()/2) + 60;
-  //   $('.sb-rachel').animate({ right: -win }, 300);
-  // });
 
   $('.sb-rachel').mouseenter(function(){
     $('.sb-rachel').animate({ right: 0 }, 300);
@@ -74,10 +83,6 @@ $(document).ready(function(){
     $('.sb-pierre').animate({ left: win }, 300);
   });
 
-  // $('.st-rachel').mouseleave(function(){
-  //   var win = ($(window).width()/2) + 60;
-  //   $('.sb-rachel').animate({ right: -win }, 300);
-  // });
 
   $('.sb-pierre').mouseenter(function(){
     $('.sb-pierre').animate({ left: 0 }, 300);

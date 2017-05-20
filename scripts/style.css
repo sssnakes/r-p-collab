@@ -152,6 +152,13 @@
   width: 30px;
   background-repeat: no-repeat;
 }
+.arrow-l-w{
+  background: url(../assets/svg/arrow-right-w.svg);
+  height: 20px;
+  width: 30px;
+  background-repeat: no-repeat;
+  float: right;
+}
 .loading-screen{
   height: 100vh;
   position: fixed;

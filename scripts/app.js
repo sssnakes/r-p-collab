@@ -11,10 +11,7 @@ $(document).ready(function(){
 // MOBILE --------------------------------------------------------------------
 
   var mobCheck = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-  if (mobCheck){
-
-    $('body').addClass('mobile-swipe');
-    $('.mouse-box').remove();
+  if ( mobCheck ){
 
     $('.menu-tr').click(function() {
       $('.sb-rachel').animate({
@@ -25,6 +22,18 @@ $(document).ready(function(){
     $('.back-rachel').click(function(){
       $('.sb-rachel').animate({
         right: '-100%'
+      });
+    });
+
+    $('.menu-tl').click(function() {
+      $('.sb-pierre').animate({
+        left: 0
+      });
+    });
+
+    $('.back-pierre').click(function(){
+      $('.sb-pierre').animate({
+        left: '-100%'
       });
     });
 
@@ -149,12 +158,16 @@ $(document).ready(function(){
 
   $('.sb-pierre').mouseleave(function() {
 
-    $('body').css('position', 'static');
-    var win = -($(window).width()/2);
-    $('.sb-pierre').animate({ left: win }, 400);
-    $('.face-container').animate({ left: '50%' }, 400);
-    $('.menu-bot').animate({ left: '82%' }, 400);
-    $('.menu-tl').animate({ left: '20px' }, 400);
+    if(mobCheck){
+      return;
+    } else{
+      $('body').css('position', 'static');
+      var win = -($(window).width()/2);
+      $('.sb-pierre').animate({ left: win }, 400);
+      $('.face-container').animate({ left: '50%' }, 400);
+      $('.menu-bot').animate({ left: '82%' }, 400);
+      $('.menu-tl').animate({ left: '20px' }, 400);
+    }
 
   });
 
@@ -173,12 +186,16 @@ $(document).ready(function(){
 
   $('.sb-rachel').mouseleave(function() {
 
-    $('body').css('position', 'static');
-    var win = -($(window).width()/2);
-    $('.sb-rachel').animate({ right: win }, 400);
-    $('.face-container').animate({ left: '50%' }, 400);
-    $('.menu-bot').animate({ left: '82%' }, 400);
-    $('.menu-tr').animate({ right: '20px' }, 400);
+    if(mobCheck){
+      return;
+    } else{
+      $('body').css('position', 'static');
+      var win = -($(window).width()/2);
+      $('.sb-rachel').animate({ right: win }, 400);
+      $('.face-container').animate({ left: '50%' }, 400);
+      $('.menu-bot').animate({ left: '82%' }, 400);
+      $('.menu-tr').animate({ right: '20px' }, 400);
+    }
 
   });
 

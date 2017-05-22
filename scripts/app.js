@@ -37,6 +37,12 @@ $(document).ready(function(){
       });
     });
 
+    $('.back-to-top').click(function(){
+      $('.intro-container').animate({
+         scrollTop: $(".intro-top").offset().top
+      }, 1600);
+    });
+
 
   } else{
 
@@ -47,22 +53,43 @@ $(document).ready(function(){
       setTimeout('$("#besideMouse").html("Pierre")'  , 1000);
       setTimeout('$("#besideMouse").html("and")'     , 1500);
       setTimeout('$("#besideMouse").html("Rachel")'  , 2000);
-      setTimeout('$("#besideMouse").html("&#12425;")', 2500);
+      setTimeout('$("#besideMouse").html("&‌#x3068")', 2500);
       setTimeout('$("#besideMouse").html("Pierre")'  , 3000);
       setTimeout('$("#besideMouse").html("et")'      , 3500);
     }
+
+    setInterval(loadingBM, 4000);
 
     $(document).mousemove(function(e){
       var cpos = { top: e.pageY + 10, left: e.pageX + 10 };
       $('#besideMouse').offset(cpos);
     });
 
-    function startLoadingBM(){
-      loadingBMint = setInterval(loadingBM, 4000);
-    }
-    startLoadingBM();
+    $(document).mouseleave(function () {
+      $('#besideMouse').css('display', 'none');
+    });
+
+    $(document).mouseenter(function () {
+      $('#besideMouse').css('display', 'block');
+    });
+
+    $('.back-to-top').mouseenter(function(){
+      $('.intro-container').animate({
+         scrollTop: $(".intro-top").offset().top
+      }, 1600);
+    });
 
   }
+
+  // SCROLL IN VIEW  -----------------------------------------------------------
+
+  $('.intro-container').scroll(function(){
+    var a = $('.intro-text').offset().top;
+
+    console.log(a);
+
+
+  });
 
   // COLLAGE --------------------------------------------------------------------
 
@@ -105,47 +132,9 @@ $(document).ready(function(){
   // SIDES ----------------------------------------------------------------------
 
 
-  // WORKING VERSION OF SIDES BUMP BEFORE FULL SLIDE
-  // $(".st-pierre").mouseenter(function(){
-  //
-  //     var win = -(($(window).width()/2) - 50);
-  //     $('.sb-pierre').animate({ left: win }, 200);
-  //
-  //     clearTimeout($(this).data('timeoutId'));
-  //
-  // }).mouseleave(function(){
-  //
-  //     var someElement = $(this),
-  //
-  //         timeoutP = setTimeout(function(){
-  //           console.log('trigger');
-  //           var win = -($(window).width()/2);
-  //           $('.sb-pierre').animate({ left: win }, 100);
-  //         }, 300);
-  //
-  //     //set the timeoutId, allowing us to clear this trigger if the mouse comes back over
-  //     someElement.data('timeoutId', timeoutP);
-  //
-  // });
-  //
-  // $('.sb-pierre').mouseenter(function(){
-  //
-  //   $('body').css('position', 'fixed');
-  //   clearTimeout($('.st-pierre').data('timeoutId'));
-  //   $('.sb-pierre').animate({ left: 0 }, 300);
-  //
-  // }).mouseleave(function(){
-  //
-  //   $('body').css('position', 'static');
-  //   console.log('sb-pierre leave');
-  //   var win = -($(window).width()/2);
-  //   $('.sb-pierre').animate({ left: win });
-  //
-  // });
-
   $(".st-pierre").mouseenter(function(){
 
-    $('body').css('position', 'fixed');
+    // $('body').css('position', 'fixed');
     $('.sb-pierre').animate({ left: 0 }, 400);
     $('.face-container').animate({ left: '75%' }, 400);
     $('.menu-bot').animate({ left: '75%' }, 400);
@@ -153,6 +142,9 @@ $(document).ready(function(){
     var trueapos = arrowpos + 20;
     console.log(trueapos);
     $('.menu-tl').animate({ left: trueapos }, 400);
+    $('.intro-container').animate({
+       scrollTop: $(".intro-top").offset().top
+    }, 400);
 
   });
 
@@ -161,7 +153,7 @@ $(document).ready(function(){
     if(mobCheck){
       return;
     } else{
-      $('body').css('position', 'static');
+      // $('body').css('position', 'static');
       var win = -($(window).width()/2);
       $('.sb-pierre').animate({ left: win }, 400);
       $('.face-container').animate({ left: '50%' }, 400);
@@ -173,7 +165,7 @@ $(document).ready(function(){
 
   $(".st-rachel").mouseenter(function(){
 
-    $('body').css('position', 'fixed');
+    // $('body').css('position', 'fixed');
     $('.sb-rachel').animate({ right: 0 }, 400);
     $('.face-container').animate({ left: '25%' }, 400);
     $('.menu-bot').animate({ left: '25%' }, 400);
@@ -181,6 +173,9 @@ $(document).ready(function(){
     var trueapos = arrowpos + 20;
     console.log(trueapos);
     $('.menu-tr').animate({ right: trueapos }, 400);
+    $('.intro-container').animate({
+       scrollTop: $(".intro-top").offset().top
+    }, 400);
 
   });
 
@@ -189,7 +184,7 @@ $(document).ready(function(){
     if(mobCheck){
       return;
     } else{
-      $('body').css('position', 'static');
+      // $('body').css('position', 'static');
       var win = -($(window).width()/2);
       $('.sb-rachel').animate({ right: win }, 400);
       $('.face-container').animate({ left: '50%' }, 400);
@@ -200,8 +195,11 @@ $(document).ready(function(){
   });
 
   $('.menu-bot').mouseenter(function() {
-    var vh = $(window).height();
-    $('html, body').animate({ scrollTop : vh }, 300);
+    var vh  = $(window).height();
+    var tru = vh - 200;
+    $('.intro-container').animate({
+       scrollTop: tru
+    }, 400);
   });
 
 

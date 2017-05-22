@@ -21,9 +21,11 @@
 
 #besideMouse{
   font-size: 6vw;
-  z-index: 1000;
+  z-index: -100;
   position: fixed;
   text-align: center;
+  top: 50%;
+  left: 45%;
   /*transform: translateX(-50%);*/
 }
 
@@ -83,21 +85,29 @@
   top: 0;
 }
 
+
 /* MENU POINTERS  -------------------------------------------------------*/
 
-.menu-pointer, .menu-pointer p{
+.menu-pointer{
   position: absolute;
+  width: 100px;
+  z-index: 500;
+}
+.menu-pointer p{
   text-transform: uppercase;
   font-size: 20px;
   font-weight: normal;
   font-family: Arial, sans-serif;
-  width: 100px;
 }
 
 .menu-tl{
   top: 20px;
   left: 20px;
   position: fixed;
+}
+.menu-tl p{
+  top: 23px;
+  position: relative;
 }
 
 .menu-tr{
@@ -114,7 +124,8 @@
 
 .arrow-l{
   background: url(../assets/svg/arrow-left.svg);
-  top: 90px;
+  top: -23px;
+  position: relative;
 }
 
 .arrow-r{
@@ -125,16 +136,17 @@
 }
 .menu-bot{
   left: 82%;
-  bottom: 25px;
+  bottom: 10px;
   position: absolute;
-  width: 75px;
+  width: 72px;
+  transform: translateX(-50%);
 }
 .arrow-d{
   background: url(../assets/svg/arrow-down.svg);
   display: inline-block;
   float: right;
   position: relative;
-  top: 7px;
+  top: -15px;
 }
 .back-button{
   text-transform: uppercase;
@@ -145,6 +157,9 @@
 }
 .back-button p{
   font-size: 20px;
+}
+.back-pierre{
+  float: right;
 }
 .arrow-r-w{
   background: url(../assets/svg/arrow-left-w.svg);
@@ -173,13 +188,33 @@
   transform: translateX(-50%);
   width: 150px;
 }
+.back-to-top{
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  text-transform: uppercase;
+}
+.back-to-top p {
+  font-family: Arial;
+  font-size: 20px;
+}
+.arrow-u{
+  height: 30px;
+  width: 30px;
+  background: url(../assets/svg/arrow-up.svg);
+  position: relative;
+  top: -50px;
+  right: -54px;
+  background-repeat: no-repeat;
+}
 
 /* INTRO CONTAINER DIV  ------------------------------------------------------*/
 
 
 .intro-container{
-  /*position: absolute;*/
-  /*pointer-events: none;*/
+  position: absolute;
+  overflow: scroll;
 }
 .intro-top{
   height: 100vh;
@@ -187,17 +222,16 @@
   position: relative;
 }
 .intro-bottom{
-  position: relative;
+  position: absolute;
+  z-index: 600;
   width: 100vw;
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 30%,rgb(255,255,255) 100%);
 }
 .intro-text{
   font-family: 'Helv', sans-serif;
   font-weight: lighter;
   font-size: 6vw;
-  padding: 20px;
-}
-.intro-footer{
-  height: 100vh;
+  padding: 20px 20px 100px 20px;
 }
 .getintouch{
   font-size: 6vw;
@@ -505,18 +539,17 @@
 
 @media screen and (max-width: 650px) {
 
-  .mouse-box{
+  #besideMouse{
     display: none;
   }
-
-
-
-
+  .menu-bot{
+    left: 50%;
+  }
   .sidebar{
     width: 100vw;
     padding-bottom: 100px;
   }
-  .sidebar p{
+  .sidebar p, .sidebar a{
     font-size: 34px;
   }
   .side-trig{
@@ -533,6 +566,9 @@
   }
   .back-button p{
     font-size: 20px;
+  }
+  .intro-text{
+    font-size: 34px;
   }
 
 
